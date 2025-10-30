@@ -1,0 +1,159 @@
+        @font-face {
+            font-family: 'Neue Haas Grotesk Display Pro';
+            src: url('font/NeueHaasDisplay-Roman.woff2') format('woff2'),
+                url('font/NeueHaasDisplay-Roman.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SSL Two';
+            src: url('font/GESSTwoLight-Light.woff2') format('woff2'),
+                url('font/GESSTwoLight-Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SSB Two';
+            src: url('font/GESSTwoBold-Bold.woff2') format('woff2'),
+                url('font/GESSTwoBold-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SSM Two';
+            src: url('font/GESSTwoMedium-Medium.woff2') format('woff2'),
+                url('font/GESSTwoMedium-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .header1 {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+
+        }
+
+        .logo-img {
+            width: 200px;
+        }
+
+        .responsive-text {
+            font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+        }
+
+        .ENGfont {
+            font-family: 'Neue Haas Grotesk Display Pro';
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .ARfont {
+            font-family: 'GE SSL Two';
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .header-margin {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* ////////////////////// */
+
+        .slogin {
+            height: 50vh;
+            width: 100%;
+            margin-top: 16%;
+        }
+
+        .slogin-text {
+            font-size: 4.5rem;
+            color: white;
+            font-family: 'GE SSM Two';
+        }
+
+       
+
+        .glow {
+            position: absolute;
+            width: 800px;
+            height: 600px;
+            border-radius: 50%;
+            left: 28%;
+            bottom: -500px;
+
+            /* very soft, layered gradient for smooth center */
+            background: radial-gradient(circle at center,
+                    rgba(173, 216, 230, 1) 0%,
+                    /* bright baby blue center */
+                    rgba(144, 202, 249, 0.8) 25%,
+                    /* softer outer ring */
+                    rgba(100, 181, 246, 0.5) 50%,
+                    /* fade out smoothly */
+                    rgba(33, 150, 243, 0.15) 75%,
+                    rgba(33, 150, 243, 0.05) 90%,
+                    transparent 100%);
+
+            /* smoother, wide halo for natural light diffusion */
+            filter: blur(120px);
+            opacity: 0.9;
+        }
+
+        .glow::after {
+            content: "";
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            right: -80px;
+            bottom: -80px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(173, 216, 230, 0.4), transparent 80%);
+            filter: blur(100px);
+            z-index: -1;
+        }
+
+
+
+
+        #particles-js {
+            position: fixed;
+            /* stays in place even when scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* send it behind everything else */
+            background-color: #000;
+            /* optional — change as you like */
+        }
