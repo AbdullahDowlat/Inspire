@@ -106,11 +106,11 @@
 
         .glow {
             position: absolute;
-            width: 800px;
-            height: 600px;
+            width: 900px;
+            height: 700px;
             border-radius: 50%;
-            left: 28%;
-            bottom: -500px;
+            left: 24%;
+            bottom: -450px;
 
             /* very soft, layered gradient for smooth center */
             background: radial-gradient(circle at center,
@@ -154,6 +154,7 @@
             height: 100%;
             z-index: -1;
             /* send it behind everything else */
-            background-color: #000;
+            background-color: #101010;
             /* optional — change as you like */
+
         }
