@@ -84,18 +84,35 @@
 
          .nav-glow a {
             position: relative;
-            color: #fff;
+            color: rgb(230, 245, 255);
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: color 0.1s ease;
         }
 
-       .nav-glow a:hover {
-            color: rgb(220, 235, 245);
-            text-shadow:
-                0 0 4px rgba(230, 245, 255, 0.5),
-                0 0 8px rgba(200, 230, 255, 0.4),
-                0 0 16px rgba(160, 210, 255, 0.3),
-                0 0 32px rgba(120, 190, 255, 0.2);
+        .nav-glow a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 150%;
+            height: 80%;
+            background: radial-gradient(circle,
+                    rgba(230, 245, 255, 0.9) 0%,
+                    rgba(190, 225, 255, 0.4) 40%,
+                    rgba(150, 210, 255, 0.1) 70%,
+                    rgba(120, 190, 255, 0) 100%);
+            border-radius: 50%;
+            filter: blur(15px);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.1s ease, transform 0.1s ease;
+            pointer-events: none;
+        }
+
+        .nav-glow a:hover::before {
+            opacity: 0.4;
+            transform: translate(-50%, -50%) scale(1);
         }
 
 
@@ -167,6 +184,7 @@
             background-color: #101010;
 
         }
+
 
 
 
