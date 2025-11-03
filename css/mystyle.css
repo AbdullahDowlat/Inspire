@@ -83,6 +83,22 @@
             font-size: 1.3rem;
         }
 
+         .nav-glow a {
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .nav-glow a:hover {
+            color: rgb(230, 245, 255);
+            text-shadow:
+                0 0 6px rgba(230, 245, 255, 0.9),
+                0 0 12px rgba(200, 230, 255, 0.8),
+                0 0 24px rgba(160, 210, 255, 0.6),
+                0 0 48px rgba(120, 190, 255, 0.4);
+        }
+
         .header-margin {
             padding-left: 20px;
             padding-right: 20px;
@@ -104,30 +120,26 @@
 
        
 
-        .glow {
+         .glow {
             position: absolute;
             width: 900px;
             height: 700px;
             border-radius: 50%;
             left: 24%;
-            bottom: -450px;
+            bottom: -480px;
 
-            /* very soft, layered gradient for smooth center */
             background: radial-gradient(circle at center,
-                    rgba(173, 216, 230, 1) 0%,
-                    /* bright baby blue center */
-                    rgba(144, 202, 249, 0.8) 25%,
-                    /* softer outer ring */
-                    rgba(100, 181, 246, 0.5) 50%,
-                    /* fade out smoothly */
-                    rgba(33, 150, 243, 0.15) 75%,
-                    rgba(33, 150, 243, 0.05) 90%,
+                    rgb(180, 225, 255) 0%,
+                    rgb(144, 202, 249) 10%,
+                    rgba(100, 181, 246, 0.6) 35%,
+                    rgba(33, 150, 243, 0.2) 60%,
+                    rgba(33, 150, 243, 0.05) 85%,
                     transparent 100%);
 
-            /* smoother, wide halo for natural light diffusion */
-            filter: blur(120px);
-            opacity: 0.9;
+            filter: blur(220px);
+            opacity: 1;
         }
+
 
         .glow::after {
             content: "";
@@ -138,7 +150,7 @@
             bottom: -80px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(173, 216, 230, 0.4), transparent 80%);
-            filter: blur(100px);
+            filter: blur(500px);
             z-index: -1;
         }
 
@@ -147,14 +159,12 @@
 
         #particles-js {
             position: fixed;
-            /* stays in place even when scrolling */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            /* send it behind everything else */
             background-color: #101010;
-            /* optional — change as you like */
 
         }
+
