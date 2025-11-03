@@ -125,7 +125,7 @@
             width: 900px;
             height: 700px;
             border-radius: 50%;
-            left: 24%;
+            left: 22%;
             bottom: -480px;
 
             background: radial-gradient(circle at center,
@@ -167,4 +167,5 @@
             background-color: #101010;
 
         }
+
 
