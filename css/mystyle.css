@@ -137,7 +137,7 @@
 
         .slogin-text {
             font-size: 4.5rem;
-            font-weight: 700;
+            font-weight: 600;
             color: white;
             letter-spacing: normal;
             font-family: 'GE SSM Two';
@@ -155,8 +155,8 @@
             width: 1200px;
             height: 700px;
             border-radius: 50%;
-            left: 24%;
-            bottom: -520px;
+            left: 17%;
+            bottom: -500px;
             background: radial-gradient(circle at center,
                     rgb(120, 160, 255) 0%,
                     /* bright inner blue */
@@ -180,8 +180,8 @@
             width: 1100px;
             height: 700px;
             border-radius: 50%;
-            left: 20%;
-            bottom: -600px;
+            left: 17%;
+            bottom: -700px;
             background: radial-gradient(circle at center,
                     rgb(100, 140, 255) 0%,
                     /* inner deep blue */
@@ -230,6 +230,29 @@
             filter: blur(400px);
             z-index: -1;
         }
+
+        @keyframes glowStart {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+/* These classes will animate the glow layers */
+.glow-anim {
+    opacity: 0;
+    animation: glowStart 1.4s ease-out forwards;
+}
+/* Delay each glow piece */
+.glow-core { animation-delay: 0s; }
+.glow-inner { animation-delay: 0.4s; }
+.glow-main { animation-delay: 0.8s; }
+.glow-halo { animation-delay: 1.2s; }
+
 
 
         .empty-container {
