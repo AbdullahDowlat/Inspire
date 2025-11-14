@@ -13,7 +13,6 @@ let model;
 
 // === LOADERS ===
 const loader = new THREE.GLTFLoader();
-const cubeTextureLoader = new THREE.CubeTextureLoader(); // ✅ added
 
 // === ENVIRONMENT MAP (reflections) ===
 
@@ -23,7 +22,7 @@ const cubeTextureLoader = new THREE.CubeTextureLoader(); // ✅ added
 
 // === LOAD MODEL ===
 loader.load(
-  'css/img/model3.glb',
+  './css/img/model3.glb',
   function (gltf) {
     model = gltf.scene;
 
@@ -177,4 +176,5 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
 
