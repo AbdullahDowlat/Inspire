@@ -23,7 +23,7 @@ const cubeTextureLoader = new THREE.CubeTextureLoader(); // ✅ added
 
 // === LOAD MODEL ===
 loader.load(
-  '/css/img/model3.glb',
+  'css/img/model3.glb',
   function (gltf) {
     model = gltf.scene;
 
@@ -177,3 +177,4 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
