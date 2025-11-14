@@ -1,0 +1,280 @@
+        @font-face {
+            font-family: 'Neue Haas Grotesk Display Pro';
+            src: url('font/NeueHaasDisplay-Roman.woff2') format('woff2'),
+                url('font/NeueHaasDisplay-Roman.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SSL Two';
+            src: url('font/GESSTwoLight-Light.woff2') format('woff2'),
+                url('font/GESSTwoLight-Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SSB Two';
+            src: url('font/GESSTwoBold-Bold.woff2') format('woff2'),
+                url('font/GESSTwoBold-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SSM Two';
+            src: url('font/GESSTwoMedium-Medium.woff2') format('woff2'),
+                url('font/GESSTwoMedium-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+            background-color: #101010;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .header1 {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+
+        }
+
+        .logo-img {
+            width: 200px;
+        }
+
+        .responsive-text {
+            font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+        }
+
+        .ENGfont {
+            font-family: 'Neue Haas Grotesk Display Pro';
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .ARfont {
+            font-family: 'GE SSL Two';
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .nav-glow a {
+            position: relative;
+            color: rgb(230, 245, 255);
+            text-decoration: none;
+        }
+
+        .nav-glow a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 80%;
+            background: radial-gradient(circle,
+                    rgba(230, 245, 255, 0.9) 0%,
+                    rgba(190, 225, 255, 0.4) 40%,
+                    rgba(150, 210, 255, 0.1) 70%,
+                    rgba(120, 190, 255, 0) 100%);
+            border-radius: 50%;
+            filter: blur(15px);
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+            will-change: opacity, transform;
+            transition: opacity 0.05s ease-out, transform 0.1s ease-out;
+        }
+
+        .nav-glow a:hover::before {
+            opacity: 0.3;
+            transform: translate(-50%, -50%) scale(1.05);
+            transition: all 0.3s ease;
+            /* instant on hover */
+        }
+
+
+
+
+
+        .header-margin {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* ////////////////////// */
+
+        .slogin {
+            height: 50vh;
+            width: 100%;
+            margin-top: 18%;
+        }
+
+        .slogin-text {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: normal;
+            font-family: 'GE SSM Two';
+        }
+
+        #banner {
+            position: relative;
+            /* Makes banner the positioning context for .glow */
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .glow {
+            position: absolute;
+            width: 1200px;
+            height: 700px;
+            border-radius: 50%;
+            left: 24%;
+            bottom: -520px;
+            background: radial-gradient(circle at center,
+                    rgb(120, 160, 255) 0%,
+                    /* bright inner blue */
+                    rgb(70, 120, 255) 10%,
+                    /* medium blue */
+                    rgba(50, 100, 220, 0.6) 35%,
+                    /* deep blue mid glow */
+                    rgba(30, 70, 180, 0.25) 60%,
+                    /* fading blue edge */
+                    rgba(10, 30, 100, 0.1) 85%,
+                    /* very soft outer edge */
+                    transparent 100%);
+            /* fade to background */
+            filter: blur(180px);
+            opacity: 0.55;
+            z-index: 0;
+        }
+
+        .glow2 {
+            position: absolute;
+            width: 1100px;
+            height: 700px;
+            border-radius: 50%;
+            left: 20%;
+            bottom: -600px;
+            background: radial-gradient(circle at center,
+                    rgb(100, 140, 255) 0%,
+                    /* inner deep blue */
+                    rgb(60, 110, 240) 15%,
+                    /* smoother transition */
+                    transparent 100%);
+            filter: blur(180px);
+            opacity: 0.9;
+            z-index: 2;
+        }
+
+        /* ✴️ Bright core in the middle */
+        .glow::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center,
+                    rgba(180, 200, 255, 1) 50%,
+                    /* pale white-blue core */
+                    rgba(120, 160, 255, 0.9) 30%,
+                    /* soft bright blue edge */
+                    transparent 50%);
+            filter: blur(50px);
+            opacity: 1;
+            z-index: 1;
+        }
+
+        /* 🌫 Outer faint halo */
+        .glow::after {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            right: -100px;
+            bottom: -100px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    rgba(60, 120, 255, 0.4),
+                    /* faint deep blue aura */
+                    transparent 80%);
+            filter: blur(400px);
+            z-index: -1;
+        }
+
+
+        .empty-container {
+            width: 100%;
+            height: 1000px;
+        }
+
+
+
+        /* The 3D model */
+        #container3D {
+            position: fixed;
+            inset: 0;
+            /* background-color: red; */
+            z-index: -1;
+            pointer-events: none;
+        }
+
+
+
+
+
+
+        #particles-js {
+            position: fixed;
+            /* stays in place even when scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* send it behind everything else */
+            background-color: #101010;
+            /* optional — change as you like */
+        }
+
+        .model {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 100;
+            /* keep it behind text but above particles */
+            pointer-events: none;
+            /* let mouse scroll work */
+            overflow: hidden;
+        }
